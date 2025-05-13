@@ -25,17 +25,17 @@ Then in the _build.gradle_ of to your application module, you can now import the
 
 For instance you can import _Google_ and _Ogury_ as follows:
 
-    implementation('com.equativ.android.mediation:equativ-display-sdk-with-google:8.3.1.0')
-    implementation('com.equativ.android.mediation:equativ-display-sdk-with-ogury:8.3.1.0')
+    implementation('com.equativ.android.mediation:equativ-display-sdk-with-google:8.5.0.0')
+    implementation('com.equativ.android.mediation:equativ-display-sdk-with-ogury:8.5.0.0')
 
 > **Note on version numbers:**
 >
-> The latest version is: **8.3.1.0**
+> The latest version is: **8.5.0.0**
 >
 > If you import several third party adapters using _Gradle_, you must use the **same version number for all of them**.
 >
 > The version number always correspond to the underlying _Equativ Display SDK_ for its first three digits, then a technical version corresponding to the adapters.
-> For instance, 8.3.1.1 would import the first technical release of the adapters with the _Equativ Display SDK_ 8.3.1.
+> For instance, 8.5.0.0 would import the first technical release of the adapters with the _Equativ Display SDK_ 8.5.0.
 
 Available adapters are:
 
