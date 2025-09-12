@@ -100,6 +100,9 @@ class SASGMAInterstitialAdapter : SASMediationInterstitialAdapter {
                 Log.d(TAG, "Google mobile ads ad onAdLoaded for interstitial")
                 this@SASGMAInterstitialAdapter.interstitialAd = interstitialAd
 
+                // to be consistent with our own way to display interstitial ads (as primary sdk)
+                interstitialAd.setImmersiveMode(true)
+
                 // Create fullscreen callback
                 interstitialAd.fullScreenContentCallback = object : FullScreenContentCallback() {
                     override fun onAdFailedToShowFullScreenContent(adError: AdError) {

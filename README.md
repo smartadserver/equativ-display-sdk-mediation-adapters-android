@@ -25,23 +25,23 @@ Then in the _build.gradle_ of to your application module, you can now import the
 
 For instance you can import _Google_ and _Ogury_ as follows:
 
-    implementation('com.equativ.android.mediation:equativ-display-sdk-with-google:8.5.2.0')
-    implementation('com.equativ.android.mediation:equativ-display-sdk-with-ogury:8.5.2.0')
+    implementation('com.equativ.android.mediation:equativ-display-sdk-with-google:8.5.3.0')
+    implementation('com.equativ.android.mediation:equativ-display-sdk-with-ogury:8.5.3.0')
 
 > **Note on version numbers:**
 >
-> The latest version is: **8.5.2.0**
+> The latest version is: **8.5.3.0**
 >
 > If you import several third party adapters using _Gradle_, you must use the **same version number for all of them**.
 >
 > The version number always correspond to the underlying _Equativ Display SDK_ for its first three digits, then a technical version corresponding to the adapters.
-> For instance, 8.5.2.0 would import the first technical release of the adapters with the _Equativ Display SDK_ 8.5.2.
+> For instance, 8.5.3.0 would import the first technical release of the adapters with the _Equativ Display SDK_ 8.5.3.
 
 Available adapters are:
 
 | Package name | Supported SDK version | Comments | Maven repository |
 | ------------ | --------------------- | -------- | ---------------- |
-| ```equativ-display-sdk-with-googlemobileads``` | 24.4.0 | _n/a_ | _n/a_ |
+| ```equativ-display-sdk-with-googlemobileads``` | 24.6.0 | _n/a_ | _n/a_ |
 | ```equativ-display-sdk-with-ogury``` | 5.6.2 | _n/a_ | ```maven {url 'https://maven.ogury.co'}``` |
 
 
