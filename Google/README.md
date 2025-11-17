@@ -11,4 +11,6 @@ If you are building your application with the ```minifiedEnable true``` option, 
 
 ## Known issues
 
+Google InterstitialAd API requires an Activity to be able to show the loaded interstitial ad. Therefore, the Equativ __SASInterstitialManager instance must be created with an Activity instance as "context" parameter in the application.__ Passing a non Activity context (typically, the ApplicationContext) will make the SASGMAInterstitialAdapter fail when requesting a Google mediated interstitial ad.
+
 
