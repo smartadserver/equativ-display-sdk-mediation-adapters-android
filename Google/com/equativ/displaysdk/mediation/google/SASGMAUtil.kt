@@ -2,7 +2,9 @@ package com.equativ.displaysdk.mediation.google
 
 import android.content.Context
 import android.util.Log
+import com.google.android.gms.ads.AdRequest
 import com.google.android.gms.ads.MobileAds
+import com.google.android.gms.ads.admanager.AdManagerAdRequest
 
 
 /**
@@ -19,6 +21,8 @@ object SASGMAUtil {
     enum class GoogleMobileAds {
         NOT_INITIALIZED, ADMOB, AD_MANAGER
     }
+
+    const val REQUEST_CONTENT_URL_KEY = "gmaRequestContentURL"
 
     /**
      * Init method for Google Mobile Ads to decide from which canal (Google AdMob or Ad Manager) ads should be requested
@@ -51,5 +55,27 @@ object SASGMAUtil {
      */
     fun getAdUnitID(serverParametersString: String) =
             serverParametersString.split("\\|".toRegex()).getOrElse(1){""}
+
+    /**
+     * Utility method to build an [AdRequest] for AdMob, optionally setting a content URL
+     * retrieved from [clientSideParameters].
+     */
+    fun buildAdMobRequest(clientSideParameters: Map<String, Any>?): AdRequest {
+        return AdRequest.Builder().apply {
+            (clientSideParameters?.get(REQUEST_CONTENT_URL_KEY) as? String)
+                ?.let { setContentUrl(it) }
+        }.build()
+    }
+
+    /**
+     * Utility method to build an [AdManagerAdRequest] for Ad Manager, optionally setting a content URL
+     * retrieved from [clientSideParameters].
+     */
+    fun buildAdManagerRequest(clientSideParameters: Map<String, Any>?): AdManagerAdRequest {
+        return AdManagerAdRequest.Builder().apply {
+            (clientSideParameters?.get(REQUEST_CONTENT_URL_KEY) as? String)
+                ?.let { setContentUrl(it) }
+        }.build()
+    }
 
 }

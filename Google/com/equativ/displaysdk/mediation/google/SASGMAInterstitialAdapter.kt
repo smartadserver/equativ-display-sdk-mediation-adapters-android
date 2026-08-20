@@ -61,7 +61,7 @@ class SASGMAInterstitialAdapter : SASMediationInterstitialAdapter {
                 val adUnitID = getAdUnitID(serverSideParametersString)
                 if (SASGMAUtil.GoogleMobileAds.ADMOB == gma) {
                     // create Google mobile ad request
-                    val adRequest = AdRequest.Builder().build()
+                    val adRequest = SASGMAUtil.buildAdMobRequest(clientSideParameters)
                     InterstitialAd.load(
                         context,
                         adUnitID,
@@ -70,7 +70,7 @@ class SASGMAInterstitialAdapter : SASMediationInterstitialAdapter {
                     )
                 } else if (SASGMAUtil.GoogleMobileAds.AD_MANAGER == gma) {
                     // create Google mobile ad request
-                    val publisherAdRequest = AdManagerAdRequest.Builder().build()
+                    val publisherAdRequest = SASGMAUtil.buildAdManagerRequest(clientSideParameters)
 
                     // create Google mobile ads interstitial ad object
                     AdManagerInterstitialAd.load(

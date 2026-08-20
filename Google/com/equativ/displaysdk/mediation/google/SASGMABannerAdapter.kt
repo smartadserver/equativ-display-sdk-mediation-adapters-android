@@ -49,9 +49,9 @@ class SASGMABannerAdapter : SASMediationBannerAdapter {
             val adSize = getAdSize(serverSideParametersString)
             if (SASGMAUtil.GoogleMobileAds.ADMOB == gma) {
                 // create google ad request
-                val adRequest = AdRequest.Builder().build()
+                val adRequest = SASGMAUtil.buildAdMobRequest(clientSideParameters)
 
-                // Create Google AdView and configure it.
+                // create Google AdView and configure it.
                 val adMobView = AdView(context)
                 adMobView.adUnitId = adUnitID
                 adMobView.setAdSize(adSize)
@@ -65,8 +65,9 @@ class SASGMABannerAdapter : SASMediationBannerAdapter {
                 adView = adMobView
             } else if (SASGMAUtil.GoogleMobileAds.AD_MANAGER == gma) {
                 // create google publisher ad request
-                val publisherAdRequest = AdManagerAdRequest.Builder().build()
+                val publisherAdRequest = SASGMAUtil.buildAdManagerRequest(clientSideParameters)
                 val adManagerView = AdManagerAdView(context)
+
                 adManagerView.adUnitId = adUnitID
                 adManagerView.setAdSizes(adSize)
                 val adListener = createAdListener(adManagerView)
